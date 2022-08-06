@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-name: mendy-be
+  name: mendy-be
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
