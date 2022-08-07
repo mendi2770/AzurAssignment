@@ -7,6 +7,7 @@ New-AzResourceGroupDeployment `
     -Name 'newstoragemendy' `
     -ResourceGroupName $rg `
     -TemplateUri 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json' `
+    -Force
 
 
 #$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
