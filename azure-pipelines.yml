@@ -13,8 +13,15 @@ steps:
 - task: AzurePowerShell@5
   inputs:
     azureSubscription: AzureAssignment-conn
-    ScriptType: 'FilePath'
-    ScriptPath: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storang-and-vm.ps1'
+    ScriptType: InlineScript
+    Inline: 
+      $rg = 'sotarge-accounts-assignment'
+      New-AzResourceGroup -Name $rg -Location northeurope -Force
+
+      New-AzResourceGroupDeployment `
+        -Name 'newstoragemendy' `
+        -ResourceGroupName $rg `
+        -TemplateUri 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json' `
     azurePowerShellVersion: 'LatestVersion'
 
 - script: |
