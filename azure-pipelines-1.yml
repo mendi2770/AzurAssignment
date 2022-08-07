@@ -1,0 +1,31 @@
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: myPool
+
+steps:
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'AzureAssignment-conn'
+    ScriptType: 'FilePath'
+    Inline:
+      $rg = 'sotarge-accounts-assignment'
+      New-AzResourceGroup -Name $rg -Location northeurope -Force
+
+      New-AzResourceGroupDeployment `
+        -Name 'newstoragemendy' `
+        -ResourceGroupName $rg `
+        -TemplateUri 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json?token=GHSAT0AAAAAABXKLMJEERHZJ6Z4NERISQZQYXPWHEQ' `
+        -storageName $storageName
+    azurePowerShellVersion: 'LatestVersion'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
