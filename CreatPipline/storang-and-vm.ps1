@@ -6,8 +6,7 @@ New-AzResourceGroup -Name $rg -Location northeurope -Force
 New-AzResourceGroupDeployment `
     -Name 'newstoragemendy' `
     -ResourceGroupName $rg `
-    -TemplateUri 'https://github.com/mendi2770/AzurAssignment/edit/main/CreatPipline/storang-and-vm.ps1' `
-    -storageName "mednypipestorage"
+    -TemplateUri 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json' `
 
 
 #$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
