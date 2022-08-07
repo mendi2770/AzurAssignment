@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -10,23 +11,12 @@ pool: MyPool
   
 
 steps:
-- task: AzureCLI@2
+- task: AzurePowerShell@5
   inputs:
     azureSubscription: 'AzureAssignment-conn'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 
-      az login
-      groupName="myGroupmendy"
-      templateFile="https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json"
-      az group create \
-        --name $groupName \
-        --location "France Central"
-
-      az deployment group create \
-        --name blanktemplate \
-        --resource-group $groupName \
-        --template-file $templateFile 
+    ScriptType: 'FilePath'
+    ScriptPath: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storang-and-vm.ps1'
+    azurePowerShellVersion: 'LatestVersion'
 
 
 - script: |
