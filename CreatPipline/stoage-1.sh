@@ -1,4 +1,4 @@
-#!/bin/bas
+#!/bin/bash
 az login
 
 groupName="myGroupmendy"
