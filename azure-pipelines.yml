@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: MyPool2
 
 steps:
 - task: AzurePowerShell@5
