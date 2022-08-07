@@ -22,6 +22,7 @@ steps:
         -Name 'newstoragemendy' `
         -ResourceGroupName $rg `
         -TemplateUri 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json' `
+      exit 0
     azurePowerShellVersion: 'LatestVersion'
 
 - script: |
