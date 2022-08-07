@@ -10,7 +10,7 @@ pool: MyPool2
   
 
 steps:
-- task: AzurePowerShell@3
+- task: AzurePowerShell@5
   inputs:
     azureSubscription: AzureAssignment-conn
     ScriptType: InlineScript
