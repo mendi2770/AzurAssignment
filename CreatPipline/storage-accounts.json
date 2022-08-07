@@ -5,7 +5,8 @@
         "storageName": {
             "type": "string",
             "minLength":3,
-            "maxLength":24
+            "maxLength":24,
+            "defaultValue": "storagepipeazure1"
         },
         "countToCopy": {
             "type": "int",
