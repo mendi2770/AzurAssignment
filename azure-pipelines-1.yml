@@ -10,7 +10,7 @@ pool:
   vmImage: myPool
 
 steps:
-- task: AzurePowerShell@3
+- task: AzurePowerShell@5
   inputs:
     azureSubscription: 'AzureAssignment-conn'
     ScriptType: 'FilePath'
