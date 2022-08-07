@@ -2,8 +2,8 @@
 az login
 
 groupName="myGroupmendy"
-templateFile="storage-accounts.json"
-templateFile2="vm-windwos-server.json"
+templateFile="https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json"
+#templateFile2="vm-windwos-server.json"
 
 az group create \
   --name $groupName \
@@ -14,7 +14,7 @@ az deployment group create \
   --resource-group $groupName \
   --template-file $templateFile 
 
-az deployment group create \
-  --name blanktemplate \
-  --resource-group $groupName \
-  --template-file $templateFile2 
+#az deployment group create \
+#  --name blanktemplate \
+#  --resource-group $groupName \
+#  --template-file $templateFile2 
