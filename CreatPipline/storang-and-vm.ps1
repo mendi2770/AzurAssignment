@@ -7,7 +7,7 @@ New-AzResourceGroupDeployment `
     -Name 'newstoragemendy' `
     -ResourceGroupName $rg `
     -TemplateFile 'storage-accounts.json' `
-    -storageName $storageName
+    -storageName "mednypipestorage"
 
 
 #$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
