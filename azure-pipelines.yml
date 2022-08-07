@@ -10,20 +10,13 @@ pool: MyPool2
   
 
 steps:
-- task: AzurePowerShell@5
+- task: AzureCLI@2
   inputs:
-    azureSubscription: AzureAssignment-conn
-    ScriptType: InlineScript
-    Inline: 
-      $rg = 'sotarge-accounts-assignment'
-      New-AzResourceGroup -Name $rg -Location northeurope -Force
+    azureSubscription: 'AzureAssignment-conn'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/stoage-1.sh'
 
-      New-AzResourceGroupDeployment `
-        -Name 'newstoragemendy' `
-        -ResourceGroupName $rg `
-        -TemplateUri 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json' `
-      exit 0
-    azurePowerShellVersion: 'LatestVersion'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
