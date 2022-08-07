@@ -19,7 +19,7 @@ steps:
     resourceGroupName: 'AzureAssignment-rg'
     location: 'France Central'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://github.com/mendi2770/AzurAssignment/blob/main/CreatPipline/storage-accounts.json'
+    csmFileLink: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json?token=GHSAT0AAAAAABXKLMJER2IK4MYBGL7ZCDTWYXPXI7Q'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
 
