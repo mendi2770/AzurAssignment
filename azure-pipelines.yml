@@ -15,7 +15,7 @@ steps:
   inputs:
     azureSubscription: 'AzureAssignment-conn'
     ScriptType: 'FilePath'
-    ScriptPath: 'storang-and-vm.ps1'
+    ScriptPath: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storang-and-vm.ps1'
     azurePowerShellVersion: 'LatestVersion'
 
 
