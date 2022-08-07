@@ -15,7 +15,7 @@ steps:
     azureSubscription: 'AzureAssignment-conn'
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
-    scriptPath: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/stoage-1.sh'
+    scriptPath: 'C:\agent\_work\2\s\stoage-1.sh'
 
 
 - script: |
