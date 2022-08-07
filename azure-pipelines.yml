@@ -1,14 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
 trigger:
 - main
 
-pool:
-  vmImage: myPool
+pool: myPool
+  
 
 steps:
-- task: AzurePowerShell@5
+- task: AzureResourceManagerTemplateDeployment@3
   inputs:
-    azureSubscription: 'AzureAssignment-conn'
-    ScriptType: 'FilePath'
-    ScriptPath: 'https://github.com/mendi2770/AzurAssignment/blob/main/CreatPipline/storang-and-vm.ps1'
-    ScriptArguments: -Location 'centralus' -ResourceGroupName 'demogroup' -TemplateFile storage-accounts.json
-    azurePowerShellVersion: 'LatestVersion'
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'AzureAssignment-conn'
+    subscriptionId: 'cea5bbc6-0bfd-434d-8a0d-e9fabbf1beef'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'AzureAssignment-rg'
+    location: 'France Central'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json?token=GHSAT0AAAAAABXKLMJFBV5AMV5GXSG5F23GYXPSY3Q'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+  
