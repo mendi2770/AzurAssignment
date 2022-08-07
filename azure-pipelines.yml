@@ -14,8 +14,19 @@ steps:
   inputs:
     azureSubscription: 'AzureAssignment-conn'
     scriptType: 'bash'
-    scriptLocation: 'scriptPath'
-    scriptPath: 'C:\agent\_work\2\s\stoage-1.sh'
+    scriptLocation: 'inlineScript'
+    inlineScript: 
+      az login
+      groupName="myGroupmendy"
+      templateFile="https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storage-accounts.json"
+      az group create \
+        --name $groupName \
+        --location "France Central"
+
+      az deployment group create \
+        --name blanktemplate \
+        --resource-group $groupName \
+        --template-file $templateFile 
 
 
 - script: |
