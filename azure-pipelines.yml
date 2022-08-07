@@ -1,10 +1,5 @@
 # Starter pipeline
-  - task: AzurePowerShell@5
-    inputs:
-      azureSubscription: 'AzureAssignment-conn'
-      ScriptType: 'FilePath'
-      ScriptPath: 'https://github.com/mendi2770/AzurAssignment/blob/main/CreatPipline/storang-and-vm.ps1'
-      azurePowerShellVersion: 'LatestVersion'
+
 
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
@@ -16,7 +11,12 @@ trigger:
 pool:
   vmImage: MyPool2
 
-steps:
+  - task: AzurePowerShell@5
+    inputs:
+      azureSubscription: 'AzureAssignment-conn'
+      ScriptType: 'FilePath'
+      ScriptPath: 'https://github.com/mendi2770/AzurAssignment/blob/main/CreatPipline/storang-and-vm.ps1'
+      azurePowerShellVersion: 'LatestVersion'
 
 
 - script: |
