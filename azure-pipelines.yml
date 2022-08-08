@@ -13,7 +13,7 @@ pool: MyPool1
 steps:
 - task: PowerShell@2
   inputs:
-    filePath: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storang-and-vm.ps1'
+    filePath: $(System.DefaultWorkingDirectory)\storang-and-vm.ps1
 
 
 - script: |
