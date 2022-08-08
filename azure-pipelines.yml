@@ -11,12 +11,9 @@ pool: MyPool
   
 
 steps:
-- task: AzurePowerShell@5
+- task: PowerShell@2
   inputs:
-    azureSubscription: 'AzureAssignment-conn'
-    ScriptType: 'FilePath'
-    ScriptPath: 'C:\agent\WorkAgent\1\s\CreatPipline\storang-and-vm.ps1'
-    azurePowerShellVersion: 'LatestVersion'
+    filePath: 'https://raw.githubusercontent.com/mendi2770/AzurAssignment/main/CreatPipline/storang-and-vm.ps1'
 
 
 - script: |
