@@ -7,8 +7,9 @@
 trigger:
 - main
 
+
 pool: MyPool1
-  
+
 
 steps:
 - task: PowerShell@2
@@ -17,6 +18,6 @@ steps:
 
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
+    echo   echo $(System.DefaultWorkingDirectory)
     echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  displayName: '  echo $(System.DefaultWorkingDirectory)'
